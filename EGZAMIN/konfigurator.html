@@ -15,7 +15,7 @@
       <button id="COLOR_3" onclick="color_3(event)" style="width: 60px; height: 20px; background-color: Olive;">Olive</button> 
     </form>
     <p>Podaj kolor czcionki</p>
-    <select>
+    <select id="zm_kolor" onchange="kolor_ccionki()">
         <option>White</option>
         <option>Tan</option>
         <option>Bisque</option>
@@ -23,23 +23,23 @@
     </select>
     <p>Podaj kolor czcionki w procentach, np. 200%</p>
     <form>
-        <input type="text" value="100%">
+        <input type="text" value="100%" id="rozmiar_ccionki" onchange="roz_ccionki(event)">
     </form>
     <p>Czy rysunek ma mieć ramkę?</p>
     <form>
-        <input type="checkbox">Rysuj Ramkę
+        <input type="checkbox" onclick="ramka()" id="ramka_obr">Rysuj Ramkę
     </form>
     <p>Jaki jest typ punktora listy</p>
     <form>
-        <input type="radio" name="radio">dysk<br>
-        <input type="radio" name="radio">kwadrat<br>
-        <input type="radio" name="radio">okrąg<br>
+        <input type="radio" name="radio" onchange="type_1()" id="type1">dysk<br>
+        <input type="radio" name="radio" onchange="type_2()" id="type2">kwadrat<br>
+        <input type="radio" name="radio" onchange="type_3()" id="type3">okrąg<br>
     </form>
   </aside>
 
   <main id="MAIN">
-    <img src="gibraltar.jpg" alt="półwysep Gibraltar">
-    <ul>
+    <img src="gibraltar.jpg" alt="półwysep Gibraltar" id="obrazek">
+    <ul id="punktor">
         <li>Element 1</li>
         <li>Element 1</li>
         <li>Element 1</li>
@@ -52,19 +52,49 @@
 <script>
     function color_1(zdarzenie){
         zdarzenie.preventDefault();
-        if(document.getElementById("MAIN").onclick){
         document.getElementById("MAIN").style.backgroundColor = "indigo";
-        }
-      }   else{
-              document.getElementById("MAIN").style.backgroundColor = "maroon";
-          }
-    function color_2(){
-        zdarzenie.preventDefault();
-        document.getElementById("MAIN").style.backgroundColor = "SteelBlue";
     }
-    function color_3(){
+    function color_2(zdarzenie){
         zdarzenie.preventDefault();
-        document.getElementById("MAIN").style.backgroundColor = "Olive";
+        document.getElementById("MAIN").style.backgroundColor = "steelBlue";
+    }
+    function color_3(zdarzenie){
+        zdarzenie.preventDefault();
+        document.getElementById("MAIN").style.backgroundColor = "olive";
+    }
+    function kolor_ccionki(){
+        document.getElementById("MAIN").style.color=document.getElementById("zm_kolor").value;
+    }
+    function roz_ccionki(zdarzenie){
+        zdarzenie.preventDefault();
+        var rozmiar = parseInt(document.getElementById("rozmiar_ccionki").value);
+        document.getElementById("MAIN").style.fontSize = rozmiar + "%";
+    }
+    function ramka(){
+        if(document.getElementById("ramka_obr").checked){
+        document.getElementById("obrazek").style="border: 7px solid black;";
+    }else{
+        document.getElementById("obrazek").style="border: none;";
+    }
+    }
+    function type_1(){
+      if(document.getElementById("type1").checked){
+        document.getElementById("punktor").style="list-style: disc;";
+      }
+    }
+    function type_2(){
+      if(document.getElementById("type2").checked){
+        document.getElementById("punktor").style="list-style: square;";
+      }else{
+        document.getElementById("punktor").style="list-style: disc;";
+      }
+    }
+    function type_3(){
+      if(document.getElementById("type3").checked){
+        document.getElementById("punktor").style="list-style: circle;";
+      }else{
+        document.getElementById("punktor").style="list-style: disc;";
+      }
     }
 </script>
 </html>
