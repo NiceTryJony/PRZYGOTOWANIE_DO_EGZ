@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+        <meta charset="utf-8">
+    </head>
+<body>
+    <form>
+        <input type="checkbox" id="obr_ramka" onchange="ramka()" style="width:200px; height:200px">
+    </form>
+<img style="width:200px; height:200px" src="5b76aaf906e70_o_full.jpg" id="obrazek">
+<script>
+    function ramka(){
+        if(document.getElementById("obr_ramka").checked){
+            document.getElementById("obrazek").style="border: 2px solid black; margin: 5px; padding: 5px ;width: 200px; height: 200px";
+        }else{
+            document.getElementById("obrazek").style="width: 200px; height: 200px;";
+        }
+
+    }
+</script>
+</body>
+</html>

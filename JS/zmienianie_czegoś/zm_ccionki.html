@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+        <meta charset="utf-8">
+    </head>
+<body>
+<!-- <form>
+    <h1>Podaj rozmiar ćcionki</h1>
+    <input id="teeext" type="text" value="100" onchange="zmien_ccionke()" ><br>
+    <input type="submit" id="wys" value="WYS">
+    <p id="wynik">Tutaj zobaczysz jak zmienia się ccionka</p> 
+</form>
+<script>
+    function zmien_ccionke(){
+            document.getElementById("wynik").style.fontSize(document.getElementById("teeext").value + "%");
+    }
+</script> -->
+<form>
+   Podaj rozmiar ćcionki: <input id="rozmiar" type="text" onchange="zmien()" value="100%">
+   <p id="wynik">Zmieniony tekst</p> 
+   <script>
+        function zmien(){
+            document.getElementById("wynik").style.fontSize=document.getElementById("rozmiar").value;
+        }
+   </script>
+</form>
+</body>
+</html>

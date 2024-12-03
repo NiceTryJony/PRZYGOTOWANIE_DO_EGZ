@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>l</title>
+        <meta charset="utf-8">
+    </head>
+<body>
+<form>
+    Chleb<input type="checkbox" id="chleb" onchange="s_chleb()" value="6"><br>
+    Masło<input type="checkbox" id="maslo" onchange="s_maslo()" value="16"><br>
+    Sól<input type="checkbox" id="sol" onchange="s_sol()" value="26"><br>
+    Mąka<input type="checkbox" id="maka" onchange="s_maka()" value="36"><br>
+    Mleko<input type="checkbox" id="mleko" onchange="s_mleko()" value="46"><br>
+</form>
+<p id="wynik">Suma: 0 zł</p>
+<script>
+    let suma=0;
+    function s_chleb(){
+        if(document.getElementById("chleb").checked){
+            suma=suma+parseInt(document.getElementById("chleb").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }else{
+            suma=suma-parseInt(document.getElementById("chleb").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }
+    }
+    function s_maslo(){
+        if(document.getElementById("maslo").checked){
+            suma=suma+parseInt(document.getElementById("maslo").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }else{
+            suma=suma-parseInt(document.getElementById("maslo").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }
+    }
+    function s_sol(){
+        if(document.getElementById("sol").checked){
+            suma=suma+parseInt(document.getElementById("sol").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }else{
+            suma=suma-parseInt(document.getElementById("sol").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }
+    }
+    function s_maka(){
+        if(document.getElementById("maka").checked){
+            suma=suma+parseInt(document.getElementById("maka").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }else{
+            suma=suma-parseInt(document.getElementById("maka").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }
+    }
+    function s_mleko(){
+        if(document.getElementById("mleko").checked){
+            suma=suma+parseInt(document.getElementById("mleko").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }else{
+            suma=suma-parseInt(document.getElementById("maka").value);
+            document.getElementById("wynik").innerHTML="Suma: "+suma+" zł";
+        }
+    }
+</script>
+</body> 
+</html>

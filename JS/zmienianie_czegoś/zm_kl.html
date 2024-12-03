@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+        <meta charset="utf-8">
+    </head>
+<body>
+<form>
+    <select id="kolor" onChange="zmien_kolor()">
+        <option name="red">czerwony</option>
+        <option>blue</option>
+        <option>green</option>
+        <option>yellow</option>
+        <option>grey</option>
+    </select>
+</form>
+    <p id="wynik">To jest prykładowy wynik</p>
+<script>
+    function zmien_kolor(){
+    if(document.getElementById("kolor")=="czerwony".style.color=document.getElementById("kolor").value);
+        document.getElementById("wynik").style.color=document.getElementById("kolor").value;
+    }
+</script>
+</body>
+</html>

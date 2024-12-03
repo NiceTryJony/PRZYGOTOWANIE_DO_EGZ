@@ -1,0 +1,4 @@
+Zapytanie 1: CREATE USER 'Agnieszka' identified by 'haslo1'
+Zapytanie 2: SELECT avg(rocznik) from samochody where marka = "opel"
+Zapytanie 3: SELECT samochody.marka, klienci.imie FROM samochody JOIN wypozyczenia on samochody.id = wypozyczenia.samochody_id join klienci on wypozyczenia.klienci_id = klienci.id
+Zapytanie 4: ALTER TABLE klasa drop COLUMN cena

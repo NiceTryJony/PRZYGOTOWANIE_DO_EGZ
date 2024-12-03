@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Style w JavaScript</title>
+  <link rel="stylesheet" href="styl6.css">
+</head>
+<body>
+  <aside id="ASSIDE">
+    <h1>Konfigurator stylu</h1>
+    <p>Podaj kolor tła</p>
+    <form>
+      <button id="COLOR_1" onclick="color_1(event)" style="width: 60px; height: 20px; background-color: Indigo;" >Indigo</button> 
+      <button id="COLOR_2" onclick="color_2(event)" style="width: 70px; height: 20px; background-color: steelblue;">SteelBlue</button> 
+      <button id="COLOR_3" onclick="color_3(event)" style="width: 60px; height: 20px; background-color: Olive;">Olive</button> 
+    </form>
+    <p>Podaj kolor czcionki</p>
+    <select>
+        <option>White</option>
+        <option>Tan</option>
+        <option>Bisque</option>
+        <option>Plum</option>
+    </select>
+    <p>Podaj kolor czcionki w procentach, np. 200%</p>
+    <form>
+        <input type="text" value="100%">
+    </form>
+    <p>Czy rysunek ma mieć ramkę?</p>
+    <form>
+        <input type="checkbox">Rysuj Ramkę
+    </form>
+    <p>Jaki jest typ punktora listy</p>
+    <form>
+        <input type="radio" name="radio">dysk<br>
+        <input type="radio" name="radio">kwadrat<br>
+        <input type="radio" name="radio">okrąg<br>
+    </form>
+  </aside>
+
+  <main id="MAIN">
+    <img src="gibraltar.jpg" alt="półwysep Gibraltar">
+    <ul>
+        <li>Element 1</li>
+        <li>Element 1</li>
+        <li>Element 1</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+  </main>
+
+  <footer>Autor: 439750925205</footer>
+</body>
+<script>
+    function color_1(zdarzenie){
+        zdarzenie.preventDefault();
+        if(document.getElementById("MAIN").onclick){
+        document.getElementById("MAIN").style.backgroundColor = "indigo";
+        }
+      }   else{
+              document.getElementById("MAIN").style.backgroundColor = "maroon";
+          }
+    function color_2(){
+        zdarzenie.preventDefault();
+        document.getElementById("MAIN").style.backgroundColor = "SteelBlue";
+    }
+    function color_3(){
+        zdarzenie.preventDefault();
+        document.getElementById("MAIN").style.backgroundColor = "Olive";
+    }
+</script>
+</html>
+
+

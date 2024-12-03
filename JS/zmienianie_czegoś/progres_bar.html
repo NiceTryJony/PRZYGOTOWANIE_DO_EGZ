@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title> <!-- Tytuł strony wyświetlany na karcie przeglądarki -->
+        <meta charset="utf-8"> <!-- Ustawienie kodowania znaków na UTF-8 -->
+    </head>
+<style>
+    #kontener{
+        background-color: aliceblue; /* Ustawienie koloru tła dla elementu o id "kontener" */
+    }
+    #pasek{
+        /* Ustawienie koloru tła dla elementu o id "pasek"*/
+        background-color: rgba(200, 0, 100, 1); 
+        height:25px; /* Ustawienie wysokości elementu "pasek" na 25 pikseli */
+        width: 0%; /* Ustawienie początkowej szerokości elementu "pasek" na 0% */
+        margin: 5px; /* Ustawienie marginesu wokół elementu "pasek" na 5 pikseli */
+    }
+</style>
+<body>
+    <form>
+        <button id="min" onclick="zmniejsz(event)">-</button> <!-- Przycisk do zmniejszania szerokości paska, wywołuje funkcję "zmniejsz" -->
+        <button id="plus" onclick="zwieksz(event)">+</button> <!-- Przycisk do zwiększania szerokości paska, wywołuje funkcję "zwieksz" -->
+    </form>
+<section id="kontener"><br> <!-- Sekcja kontenera, która zawiera pasek postępu -->
+    <section id="pasek">
+    </section> <!-- Sekcja paska postępu -->
+</section>
+<script>
+    function zwieksz(a){ // Funkcja do zwiększania szerokości paska
+        a.preventDefault(); // Zapobiega domyślnemu działaniu przycisku (przeładowaniu strony)
+        let postep=document.getElementById("pasek"); // Pobiera element o id "pasek"
+        szerokosc=parseInt(postep.style.width) || 0; // Pobiera aktualną szerokość paska i konwertuje ją na liczbę, jeśli nie ma wartości, ustawia na 0
+        console.log(szerokosc); // Wyświetla aktualną szerokość paska w konsoli
+            if(szerokosc+10<100){ // Sprawdza, czy po dodaniu 10% szerokość paska będzie mniejsza niż 100%
+                szerokosc=szerokosc+10; // Jeśli tak, zwiększa szerokość paska o 10%
+            }else{
+                szerokosc=100; // Jeśli nie, ustawia szerokość paska na 100%
+            }
+            postep.style.width=szerokosc+"%"; // Ustawia nową szerokość paska
+    }
+    function zmniejsz(a){ // Funkcja do zmniejszania szerokości paska
+        a.preventDefault(); // Zapobiega domyślnemu działaniu przycisku (przeładowaniu strony)
+        let postep=document.getElementById("pasek"); // Pobiera element o id "pasek"
+        szerokosc=parseInt(postep.style.width); // Pobiera aktualną szerokość paska i konwertuje ją na liczbę
+        console.log(szerokosc); // Wyświetla aktualną szerokość paska w konsoli
+            if(szerokosc-10>0){ // Sprawdza, czy po odjęciu 10% szerokość paska będzie większa niż 0%
+                szerokosc=szerokosc-10; // Jeśli tak, zmniejsza szerokość paska o 10%
+            }else{
+                szerokosc=0; // Jeśli nie, ustawia szerokość paska na 0%
+            }
+            postep.style.width=szerokosc+"%"; // Ustawia nową szerokość paska
+    }
+</script>
+</body>
+</html>

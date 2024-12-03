@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+        <meta charset="utf-8">
+    </head>
+<body>
+    <form>
+        <input type="checkbox" id="ch_sport" onchange="graf_SPORT()" style="width:100px; height:100px">SPORT
+        <input type="checkbox" id="ch_film" onchange="graf_FILM()" style="width:100px; height:100px">FILM
+        <input type="checkbox" id="ch_music" onchange="graf_MUSIC()" style="width:100px; height:100px">MUSIC
+    </form>
+<img src="C:\VS_code\JS\str\grafika\large_a5f249f27_sports_background.jpg" style="display: none" id="obr_sport">
+<img src="C:\VS_code\JS\str\grafika\61da8438155793.57575971afe13.jpg" style="display: none" id="obr_film">
+<img src="C:\VS_code\JS\str\grafika\music-background-meaning-singing-instruments-and-notes.jpg" style="display: none" id="obr_music">
+<script>
+    function graf_SPORT(){
+        if(document.getElementById("ch_sport").checked){
+            document.getElementById("obr_sport").style="display: inline; width: 400px; height: 500px";
+        }else{
+            document.getElementById("obr_sport").style="display: none";
+        }
+    }
+    function graf_FILM(){
+        if(document.getElementById("ch_film").checked){
+            document.getElementById("obr_film").style="display: inline; width: 400px; height: 500px";
+        }else{
+            document.getElementById("obr_film").style="display: none";
+        }
+    }
+    function graf_MUSIC(){
+        if(document.getElementById("ch_music").checked){
+            document.getElementById("obr_music").style="display: inline; width: 400px; height: 500px";
+        }else{
+            document.getElementById("obr_music").style="display: none";
+        }
+    }
+</script>
+</body>
+</html>
