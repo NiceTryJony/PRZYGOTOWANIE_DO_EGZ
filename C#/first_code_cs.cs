@@ -12,6 +12,8 @@ class Program{
         Console.Write("Podaj ile masz lat");
         string wiek = Console.ReadLine();
 
+        Console.WriteLine($"{imie} {nazwisko} ma {wiek} lat");
+
         
     }
 }
